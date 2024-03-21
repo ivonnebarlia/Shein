@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from rest_framework import routers
-from .api import ProductViewSet
+from shein.myapp.viewsets.ProductViewset import ProductViewSet
 
 router = routers.DefaultRouter()
 

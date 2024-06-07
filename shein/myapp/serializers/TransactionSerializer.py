@@ -1,10 +1,26 @@
 from rest_framework import serializers
-from shein.myapp.models import Transaction, Product
-from shein.myapp.serializers import ProductSerializer
+from myapp.models import Transaction, Product
+from myapp.serializers import ProductSerializer
 
+
+class TransactionReadSerializer(serializers.ModelSerializer):
+    product_name = serializers.CharField(source='product_id.name', read_only=True)
+
+    class Meta:
+        model = Transaction
+        fields = [
+            'id',
+            'product_id',   # If you want the product ID
+            'product_name', # If you want the product name
+            'amount',
+            'price',
+            'date',
+            'type_transaction',
+            'suppler'
+        ]
 
 class TransactionSerializer(serializers.ModelSerializer):
-    product_id = ProductSerializer(read_only=True)
+    # product_id = ProductSerializer(read_only=True)
     class Meta:
         model_transaction = Transaction
         fields = ('id', 'product_id', 'amount', 'price', 'date', 'type_transaction', 'suppler ')

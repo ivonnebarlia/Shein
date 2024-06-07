@@ -21,6 +21,7 @@ class Transaction(models.Model):
         return self.name
 
 
+
 class Transaction(models.Model):
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     amount = models.IntegerField()

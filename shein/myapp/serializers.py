@@ -1,12 +1,14 @@
 from rest_framework import serializers
-from myapp.models import Product, Transaction
+from .models import Product
 
 
 class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'description', 'sales_price')
+        fields = ('name', 'description', 'sales_price')
+
+    name =serializers.CharField(max_length=100)
 
     def create(self, validated_data):
         """
@@ -21,5 +23,3 @@ class ProductSerializer(serializers.ModelSerializer):
         instance.name = validated_data.get('name', instance.name)
         instance.save()
         return instance
-
-

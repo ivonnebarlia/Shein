@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-kyr&_twd1jwe17vfnd-6&$sa06!94fx19uw0r41%7+@)d3+-%)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'rest_framework',
 
 ]
 
@@ -92,6 +95,15 @@ with env.prefixed("DJANGO_DB_"):
             'HOST': env.str('HOST', '127.0.0.1'),
             'PORT': env.int('PORT', 5432)
         }
+    }
+
+    REST_FRAMEWORK = {
+        'DEFAULT_RENDERER_CLASSES': (
+            'rest_framework.renderers.JSONRenderer',
+        ),
+        'DEFAULT_PARSER_CLASSES': (
+            'rest_framework.parsers.JSONParser',
+        ),
     }
 
 # Password validation

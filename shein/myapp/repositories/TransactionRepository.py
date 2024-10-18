@@ -1,4 +1,4 @@
-from shein.myapp.models import Transaction
+from myapp.models import Transaction
 
 
 class TransactionRepository:

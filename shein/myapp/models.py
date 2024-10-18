@@ -12,7 +12,6 @@ class Product(models.Model):
         return self.name
 
 
-
 class Transaction(models.Model):
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     amount = models.IntegerField()
@@ -22,8 +21,7 @@ class Transaction(models.Model):
     suppler = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
-
+        return self.product_id
 
     class Meta:
         ordering = ('id',)

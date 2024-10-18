@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from myapp.models import Product, Transaction
+from myapp.models import Product
 
 
 class ProductSerializer(serializers.ModelSerializer):

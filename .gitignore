@@ -1,1 +1,4 @@
+# Excluir archivos .pyc
+*.pyc
+
 .idea/

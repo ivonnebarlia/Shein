@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
 from myapp.models import Transaction
-from myapp.serializers.TransactionSerializer import TransactionReadSerializer
+from myapp.serializers.transactionSerializer import TransactionReadSerializer
 
 
 class TransactionViewSet(viewsets.ModelViewSet):

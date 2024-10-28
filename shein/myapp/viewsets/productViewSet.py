@@ -1,7 +1,6 @@
 from rest_framework import viewsets, permissions
-
 from myapp.repositories.productRepository import ProductRepository
-from myapp.serializers.ProductSerializer import ProductSerializer
+from myapp.serializers.productSerializer import ProductSerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):

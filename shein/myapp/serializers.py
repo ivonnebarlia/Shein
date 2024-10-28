@@ -6,9 +6,9 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('name', 'description', 'sales_price')
+        fields = ('name', 'description', 'sale_price')
 
-    name =serializers.CharField(max_length=100)
+    name = serializers.CharField(max_length=100)
 
     def create(self, validated_data):
         """
